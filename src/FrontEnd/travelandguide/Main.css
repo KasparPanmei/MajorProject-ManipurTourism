@@ -1,0 +1,385 @@
+:root
+{
+    --hero-span-color: #F4895A;
+}
+.container
+{
+    margin: 10px;
+    background-color: #F6FFF6;
+    font-family: var(--normal-font-family);
+}
+
+
+.guides-photographer-content
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.guides-photographer-content .guides_photographerbtn
+{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.guides_photographerbtn h3
+{
+    color: var(--aside-bg-color);
+    font-family: "Inter", serif;
+    text-decoration: underline;
+}
+.portfolio
+{
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+    place-items: center;
+}
+.portfoliocontent
+{
+    display: flex;
+    width: calc(500px);
+    background-color: #E8FEE8;
+}
+
+.second-content
+{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.second-content .top-content
+{
+    display: flex;
+    width: calc(90%);
+    padding: 10px;
+    justify-content: space-between !important;
+    border-bottom: 1px solid var(--aside-bg-color);
+}
+
+.second-content .top-content h2
+{
+    font-size: 14px;
+    color: var(--aside-bg-color);
+    font-weight: bolder;
+}
+
+.second-content .top-content #price
+{
+    color:var(--navbar-bg-color);
+}
+
+.second-content .motto p
+{
+    font-family: 'la belle aurore', cursive;
+    font-size: large;
+}
+
+.second-content .rating
+{
+    width: calc(90%);
+    border-top: 1px solid var(--aside-bg-color);
+}
+.second-content .rating h3
+{
+    font-size: 14px;
+    color: var(--aside-bg-color);
+}
+
+.view-more-btn
+{
+    background-color: var(--aside-bg-color);
+    color: var(--normal-font-color);
+    padding: 5px 15px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.form
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.form form
+{
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 550px;
+    background-color: var(--aside-bg-color);
+}
+.form form .first-inputform
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.form form .second-inputform
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.form form input
+{
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+.form form label
+{
+    color: var(--normal-font-color);
+}
+
+.optionalinput
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.optionalinput select
+{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.optionalinput select:focus
+{
+    outline: none;
+}
+
+
+.optionalinput select option
+{
+    background-color: var(--normal-font-color);
+    color: var(--navbar-bg-color);
+    padding: 20px;
+}
+
+.findguide-btn
+{
+    padding: 5px 15px;
+    background-color: var(--navbar-bg-color);
+    border: none;
+    cursor: pointer;
+    color: var(--normal-font-color);
+}
+.form form p
+{
+    font-size: 11px;
+    color: var(--normal-font-color);
+}
+.guide-services
+{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.WhyChooseOurGuideContent
+{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.WhyChooseOurGuideContent .whyourguide 
+{
+    width: calc(250px);
+    height: calc(350px);
+    align-items: center;
+    display: flex !important;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.WhyChooseOurGuideContent .whyourguide .title p
+{
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+
+@media (max-width:1366.98px) 
+{
+    .hero-content
+    {
+        margin-top: 10px !important
+    }
+    .hero-content p
+    {
+        font-size: 13px;
+    }
+}
+@media (max-width:1270.98px) 
+{
+    .hero-container
+    {
+        grid-template-columns: repeat(5,1fr);
+        grid-template-areas: "left right right right right" !important;
+        
+    }
+    .hero-image
+    {
+        grid-area: left !important;
+    } 
+    .hero-image img
+    {
+        width: calc(100%);
+        height: calc(100%);
+        object-fit: cover;
+    }
+    .hero-content
+    {
+        grid-area: right !important;
+    }
+
+    .portfolio
+    {
+        gap: 10px !important;
+    }
+    .portfoliocontent
+    {
+        width: calc(450px);
+    }
+    .motto p
+    {
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width:1122.98px) 
+{
+    .portfolio
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .portfoliocontent
+    {
+        width: calc(70%);
+    }    
+}
+@media (max-width:999.98px) 
+{
+    .hero-container
+    {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+    }
+    .WhyChooseOurGuideContent   
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:774.98px) 
+{
+    .heading h3
+    {
+        font-size: 25px;
+    }
+    .heading .firstrow::after{
+      
+        width: 43px;
+    }
+    .heading .secondrow::after{
+        
+        width: 70px;
+    }
+    .whyourguide  
+    {
+       width: 150px !important;
+       height: calc(100%) !important;
+    }
+    .portfoliocontent
+    {
+        display: flex;
+        flex-direction: column !important
+    } 
+}
+@media (max-width:634.98px) 
+{
+    .heading h3
+    {
+        font-size: 19px;
+    }
+    .heading .firstrow::after{
+      
+        width: 23px;
+    }
+    .heading .secondrow::after{
+        
+        width: 45px;
+    }
+    .whyourguide  .title
+    {
+       width: 150px !important;
+       height: inherit;
+    }
+    form .first-inputform
+    {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+    form .second-inputform
+    {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+    form .optionalinput
+    {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .WhyChooseOurGuideContent   
+    {
+        grid-template-columns: repeat(1,1fr);
+        width: calc(100%);
+    }
+    .title h3
+    {
+        font-size: 15px;
+    }
+    .title p
+    {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:527.98px) 
+{
+    .heading h3
+    {
+        font-size: 16px;
+    }   
+    .heading .firstrow::after{
+        
+        margin: 0px 0 0 20px;
+        width: 25px;
+        height: 3px;
+    }
+    .heading .secondrow::after{
+      
+        margin: 15px 0 0 20px;
+        width: 50px;
+        height: 2px;
+    }
+    .WhyChooseOurGuideContent
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

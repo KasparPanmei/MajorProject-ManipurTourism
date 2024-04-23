@@ -1,0 +1,349 @@
+:root
+{
+    --hero-span-color: #F4895A;
+}
+.container
+{
+    margin: 10px;
+    background-color: #F6FFF6;
+    font-family: var(--normal-font-family);
+}
+
+/* tabs */
+.tabs
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--normal-font-family);
+}
+.tabs .tabs-content
+{
+    margin-top: 20px;
+  width: calc(100%);
+  background-color: var(--aside-bg-color);
+}
+.tabs-content .top-contents
+{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.tab-form1
+{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  color: var(--normal-font-color);
+  width: calc(50%);
+}
+.top-contents .active
+{
+    background-color: var(--aside-bg-color);
+}
+.tab-form2
+{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  color: var(--aside-bg-color);
+  width: calc(50%);
+  background-color: var(--normal-font-color);
+}
+.top-contents h2
+{
+    font-size: 24px;
+}
+.bottom-contents 
+{
+  display: none;
+}
+
+.show-content
+{
+    margin-top: 20px;
+  display: block;
+  padding: 10px;
+}
+
+.show-content h2, .show-content p
+{
+  text-align: justify;
+  line-height: 30px;
+  color: var(--normal-font-color);
+}
+
+.show-content .contents form
+{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+}
+.show-content .contents .first-row 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.show-content .contents .first-row .radio-contents
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--normal-font-color);
+}
+
+.radio-contents input
+{
+    width: 30px !important;
+}
+
+.show-content .select-options
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+select 
+{
+    padding: 10px;
+}
+input
+{
+    border: none;
+}
+input:focus
+{
+    outline: none;
+}
+select:focus
+{
+    outline: none;
+}
+label
+{
+    color: var(--normal-font-color);
+}
+.show-content .second-row
+{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 100px;
+    align-items: center;
+}
+
+.show-content .second-row .second-row-contents
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.show-content .second-row .second-row-contents .columns
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+
+.submit-btn
+{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.submit-btn button
+{
+   padding: 10px !important;
+    border-radius: 5px !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: transform 500ms ease;
+    animation: scale infinite linear .9s;
+}
+
+.input-columns
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.input-columns .columns
+{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 10px;
+}
+.input-columns .columns .date
+{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 10px;
+}
+.input-columns .columns input
+{
+   height: 30px;
+   border-radius: 4px;
+   width: 100%;
+}
+
+.input-columns .columns .btn button
+{
+    background-color: transparent;
+    border: 1px solid var(--normal-font-color);
+    padding: 10px;
+    color: var(--normal-font-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Inter",sans-serif;
+    margin-top: 25px;
+}
+
+@keyframes scale {
+    0%
+    {
+        transform: scale(1);
+    }
+    100%
+    {
+        transform: scale(1.1);
+    }
+}
+
+/* flights for you */
+/* Explore Destinations */
+.flights
+{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 30px;
+    gap: 30px;
+}
+.flights a
+{
+    color: var(--aside-bg-color);
+    text-decoration: none;
+    font-family: var(--normal-font-family);
+}
+.flightsContents
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(250px);
+    height: calc(330px);
+    background-color: var(--card-bg-color);
+    line-height: 30px;
+}
+.flightsContents .images
+{
+    width: calc(100%);
+    height: calc(250px);
+}
+.flightsContents .images img
+{
+    width: calc(100%);
+    height: calc(100%);
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.flightsContents .Description
+{
+    text-align: center;
+    margin: 10px 5px 0 5px;
+    width: calc(90%);
+    font-size: 13px;
+}
+
+
+.readmorebtn
+{
+    margin: 30px 0 20px 0;
+}
+.readmorebtn .btn
+{
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--aside-bg-color);
+    color: var(--normal-font-color);
+    font-family: var(--normal-font-family);
+
+}
+/* media query */
+
+
+
+@media (max-width:1200.98px) 
+{
+    .flights
+    {
+        grid-template-columns: repeat(3,1fr) !important;
+    }
+}
+
+@media (max-width:1057.98px) 
+{
+    .show-content .second-row
+    {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 30px;
+        align-items: center;
+    }
+
+}
+@media (max-width:993.98px) 
+{
+    .show-content .second-row
+    {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 30px;
+        align-items: center;
+    }
+}
+@media (max-width:881.98px) 
+{
+    .show-content .second-row
+    {
+        flex-wrap: wrap;
+    }
+    .flights
+    {
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+}
+@media (max-width:693.98px) 
+{
+    .flightsContents
+    {
+        width: calc(200px);
+    }
+}
+@media (max-width:580.98px) 
+{
+    .flights
+    {
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .flightsContents
+    {
+        width: calc(250px);
+    }
+}

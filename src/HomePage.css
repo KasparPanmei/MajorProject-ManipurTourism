@@ -1,0 +1,131 @@
+::-webkit-scrollbar
+{
+    background-color: var(--aside-bg-color);
+    width: 5px;
+}
+::-webkit-scrollbar-thumb
+{
+   background-color: var(--navbar-bg-color);
+   border-radius: 5px;
+}
+
+:root
+{
+    --navbar-bg-color: #557a55;
+    --aside-bg-color: #304d30;
+    --normal-font-color: #FBF6F6;
+    --ul-bg-color: #d9d9d9;
+    --normal-font-family: "Inter", san-serif;
+    --card-bg-color: #CFE1CF;
+    
+}
+
+*
+{
+    margin: 0%;
+    padding: 0%;
+    font-family: "Inter", sans-serif;
+}
+
+.gridContainer
+{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1.5fr;
+    grid-template-areas: "Navbar Navbar Navbar Navbar Navbar Navbar" "Sidebar main main main main main";
+}
+.navbar
+{
+    position: sticky;
+    top: 0%;
+    z-index: 1000;
+    grid-area: Navbar;
+}
+.Aside
+{
+    grid-area: Sidebar;
+}
+.main
+{
+    grid-area: main;
+}
+
+.footer
+{
+    background-color: green;
+}
+@media (max-width:440.98px) 
+{
+    .gridContainer
+    {
+        grid-template-areas: "Navbar Navbar Navbar Navbar Navbar Navbar" "main main main main main main";
+    }
+}
+
+
+.hero-container
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "left right right";
+    height: 296px;
+    background-color: var(--aside-bg-color);
+}
+.hero-image
+{
+    grid-area: left;
+    width: calc(105%);
+    height: inherit;
+}
+.Greetings-content
+{
+    text-align: left;
+    grid-area: right;
+    margin: 2% 0 0 4%;
+}
+
+.Greetings-content h3{
+    font-size: 30px;
+    font-family: "Kaushan Script", cursive;
+    color: var(--normal-font-color);
+    letter-spacing: 2px;
+}
+.Greetings-content h3 span
+{
+    color: var(--hero-span-color);
+    font-family: "Kaushan Script", cursive;
+}
+
+.Greetings-content p
+{
+    font-family: var(--normal-font-family);
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 30px;
+    color: var(--normal-font-color);
+}
+.Greetings-content p span
+{
+    font-family: "Lemon", serif;
+}
+
+ select
+{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+ select:focus
+{
+    outline: none;
+}
+
+
+ select option
+{
+    background-color: var(--normal-font-color);
+    color: var(--navbar-bg-color);
+    padding: 20px;
+}
