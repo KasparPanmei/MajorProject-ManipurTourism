@@ -222,7 +222,6 @@ label
 }
 
 /* flights for you */
-/* Explore Destinations */
 .flights
 {
     display: grid;
@@ -285,6 +284,43 @@ label
     font-family: var(--normal-font-family);
 
 }
+
+/* morecontents */
+.morecontents
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0 90px 0;
+}
+
+.morecontents .choosecontents
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 12px;
+    gap: 20px;
+    align-items: center;
+    width: calc(350px);
+    height: calc(190px);
+    line-height: 30px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px 0.3px var(--aside-bg-color);
+    font-family: var(--normal-font-family);
+}
+.morecontents .choosecontents .image
+{
+    width: calc(50px);
+}
+.morecontents .choosecontents .image img
+{
+    width: calc(100%);
+}
+
+
+
 /* media query */
 
 

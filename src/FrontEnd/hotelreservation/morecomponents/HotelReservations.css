@@ -1,0 +1,131 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.flex-body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hotelcontainer
+{
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+.hotelcontainer .cards .contents
+{
+    color: var(--aside-bg-color);
+}
+.cards
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    background-color: var(--card-bg-color);
+    width: calc(290px);
+    height: calc(450px);
+    line-height: 30px;
+}
+.hotelcontainer .cards .imageContent 
+{
+    width: calc(100%);
+    height: calc(250px);
+    overflow: hidden;
+    cursor: pointer;
+}
+.hotelcontainer .imageContent img
+{
+    width: calc(100%);
+    height: calc(100%);
+    object-fit: cover;
+    
+    transition: transform 500ms;
+}
+.hotelcontainer .imageContent:hover img
+{
+    transform: scale(1.2);
+}
+
+.contents
+{
+    line-height: 30px;
+}
+
+
+@media (max-width:1441.98px) 
+{
+    .hotelcontainer
+    {
+        gap: 40px;
+    }
+    .cards
+    {
+        width: calc(250px);
+        height: calc(450px);
+    }
+}
+@media (max-width:1355.98px) 
+{
+    .hotelcontainer
+    {
+        gap: 20px;
+    }
+    .cards
+    {
+        width: calc(230px);
+        height: calc(450px);
+    }
+}
+@media (max-width:1193.98px) 
+{
+    .hotelcontainer
+    {
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+    }
+    .cards
+    {
+        width: calc(280px);
+        height: calc(450px);
+    }
+}
+@media (max-width:1097.98px) 
+{
+    .hotelcontainer
+    {
+        place-content: center;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+    }
+    .cards
+    {
+        width: calc(300px);
+        height: calc(450px);
+    }
+}
+@media (max-width:760.98px) 
+{
+    
+    .cards
+    {
+        width: calc(250px);
+        height: calc(450px);
+    }
+}
+@media (max-width:671.98px) 
+{
+    .hotelcontainer
+    {
+        place-content: center;
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+    }
+    
+}

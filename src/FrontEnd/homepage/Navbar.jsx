@@ -7,14 +7,16 @@ import Close from '../../images/Icons/close.png';
 function Navbar() {
   const Links = [
       {name:"Home",link:"/"},
+      {name:"Explore Places",link:"/ExplorePlaces"},
       {name:"Travels & Guides",link:"/TravelGuide"},
       {name:"Hotel & Reservations",link:"/HotelReservation"},
-      {name:"Taxi & Flight Booking",link:"/TaxiFlightBooking"},
+      {name:"Taxi & Rent Vehicle",link:"/RentVehicle"},
+      {name:"Flight Booking",link:"/TaxiandFlightBooking"},
       {name:"Park & Gardens",link:"/ParkGarden"},
       {name:"Camping & Travelling Kits",link:"/Camping"},
-      {name:"Rent Vehicle",link:"/RentVehicle"},
       {name:"Cultural & Traditional Items",link:"/Cultural"},
-      {name:"About",link:"/About"},
+      {name:"Our Gallery",link:"/About"},
+      {name:"Admin",link:"/Admin"},
   ]
   const navRef = useRef();
   const showNavbar =() =>
@@ -30,7 +32,7 @@ function Navbar() {
         <div className="login-icons">
             <ul>
               <li><a href="https://www.bing.com/?FORM=Z9FD1"  rel='noopener noreferrer'><img src={Images.Hearts} alt="hearts"/></a></li>
-              <li><a href="https://www.bing.com/?FORM=Z9FD1"  rel='noopener noreferrer'><img src={Images.User} alt="login" /></a></li>
+              <li><Link to="/Register" target='_blank'><img src={Images.User} alt="login" /></Link></li>
               <li><a href="https://www.bing.com/?FORM=Z9FD1"  rel='noopener noreferrer'><img src={Images.Notification} alt="notification" /></a></li>
             </ul>
         </div>
@@ -53,7 +55,7 @@ function Navbar() {
                       </ul>
                   </nav>
         </div>
-        <button className='nav-btn' onClick={showNavbar}>
+        <button className='nav-btn open-btn' onClick={showNavbar}>
                   <img src={Menu} alt="Menu Bar" />
               </button>   
         </div>

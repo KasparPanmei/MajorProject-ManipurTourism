@@ -7,9 +7,10 @@ import Close from '../../images/Icons/close.png';
 function Navbar() {
   const Links = [
       {name:"Home",link:"/"},
+      {name:"Explore Places",link:"/ExplorePlaces"},
       {name:"Travels & Guides",link:"/TravelGuide"},
       {name:"Hotel & Reservations",link:"/HotelReservation"},
-      {name:"Taxi & Flight Booking",link:"/TaxiFlightBooking"},
+      {name:"Taxi & Flight Booking",link:"/TaxiandFlightBooking"},
       {name:"Park & Gardens",link:"/ParkGarden"},
       {name:"Camping & Travelling Kits",link:"/Camping"},
       {name:"Rent Vehicle",link:"/RentVehicle"},

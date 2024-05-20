@@ -1,6 +1,8 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import './Main.css'
 import '../../HomePage.css'
+import axios from 'axios'
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Images from '../../images/Images';
@@ -209,6 +211,31 @@ function Main() {
         description:'We understand that circumstances may change, and your peace of mind matters to us. We provide customer-friendly refunds policy for every transaction you made.'
     },
   ]
+
+  const[noofwayone, setNoofwayone] = useState()
+  const[noofwaytwo, setNoofwaytwo] = useState()
+  const[from, setFrom] = useState()
+  const[destination, setDestination] = useState()
+  const[name, setName] = useState()
+  const[phone, setPhone] = useState()
+  const[email, setEmail] = useState()
+  const[date, setDate] = useState()
+  const[number, setNumber] = useState()
+  const[childrenYes, setChildrenyes] = useState()
+  
+  const[childrenNo, setChildrenno] = useState()
+  const[dtime, setDtime] = useState()
+  const[rtime, setRtime] = useState()
+
+
+  const handleFormSubmit = (e) =>
+  {
+    e.preventDefault();
+    axios.post('http://localhost:3003/HomePageform',{noofwayone, noofwaytwo,from,destination,name,phone,email,date,number,childrenYes,childrenNo,dtime,rtime})
+    .then(result => alert(result))
+    .catch(err => console.log(err))
+  }
+
   return (
     <div className='main' id='top' >
       <div className="hero-container" data-aos="zoom-in" >
@@ -242,7 +269,9 @@ function Main() {
         </div>
         <div className="imageContents">
             <div className="firstcontent">
-                <img src={Images.bishnupurlakeswaterfall} alt={Images.label1} />
+                <Link to='/exploreplaces/districts/bishnupur/loktaklake' target='_blank'>
+                  <img src={Images.bishnupurlakeswaterfall} alt={Images.label1} />
+                </Link>
             </div>
             <div className="secondcontent-flex">
                 <div className="topflex">
@@ -331,42 +360,42 @@ function Main() {
                 <p className='second-para'>Secure your spot on this unforgettable journey by booking now.</p>
             </div>
             <div className="booking-second-content">
-                <form action="">
+                <form action="" onSubmit={handleFormSubmit}>
                     <div className="radiobtn">
-                        <input type="radio" name="noofway" id="oneway" />One Way
-                        <input type="radio" name="noofway" id="oneway" />Two Way
+                        <input type="radio" name="noofway" value="One Way" id="way" onChange={(e) =>setNoofwayone(e.target.value)}/>One Way
+                        <input type="radio" name="noofway" value="Two Way" id="way" onChange={(e) =>setNoofwaytwo(e.target.value)}/>Two Way
                     </div>
                     <div className="inputs">
-                        <input type="text" name="From" id="from" placeholder='From' required/>
-                        <input type="text" name="Destination" id="from" placeholder='Destination' required />
+                        <input type="text" name="From" id="from" placeholder='From'onChange={(e) =>setFrom(e.target.value)} required/>
+                        <input type="text" name="Destination" id="to" placeholder='Destination' required onChange={(e) =>setDestination(e.target.value)} />
                         <div className="more-input-flex">
-                            <input type="text" name="name" id="name" placeholder='Name' required />
-                            <input type="text" name="phone" id="phone" placeholder='Phone no.' required />
+                            <input type="text" name="name" id="name" placeholder='Name' onChange={(e) =>setName(e.target.value)} required />
+                            <input type="text" name="phone" id="phone" onChange={(e) =>setPhone(e.target.value)} placeholder='Phone no.' required />
                         </div>
                         <div className="more-input-flex">
-                            <input type="email" name="email" id="email" placeholder='example@gmail.com' required />
+                            <input type="email" name="email" id="email" placeholder='example@gmail.com' onChange={(e) =>setEmail(e.target.value)} required />
                             <label htmlFor="date">Date</label>
-                            <input type="date" name="date" id="date" placeholder='date no.' required />
+                            <input type="date" name="date" id="date" onChange={(e) =>setDate(e.target.value)} placeholder='date no.' required />
                         </div>
                         <div className="more-input-flex">
-                            <input type="number" name="number" id="number" placeholder='No. of people' required />
+                            <input type="number" name="number" id="number" placeholder='No. of people' onChange={(e) =>setNumber(e.target.value)} required />
                             <div className="children">
                                 <label htmlFor="childrens">Children </label>
-                                <input type="radio" name="children" id="yes" />
+                                <input type="radio" name="childrenYes" value="Yes" onChange={(e) =>setChildrenyes(e.target.value)} id="no" />
                                 <label htmlFor="yes">Yes</label>
-                                <input type="radio" name="children" id="no" />
+                                <input type="radio" name="childrenNo" value="No"  onChange={(e) =>setChildrenno(e.target.value)}id="no" />
                                 <label htmlFor="no">No</label>
                             </div>
                         </div>
                         <div className="more-input-flex">
                             <label htmlFor="departuretime">Departure Time</label>
-                            <input type="time" name="time" id="dtime" placeholder='Departure Time' required />
+                            <input type="time" name="dtime" id="dtime" onChange={(e) =>setDtime(e.target.value)} placeholder='Departure Time' required />
                             <label htmlFor="returntime">Return Time</label>
-                            <input type="time" name="time" id="rtime" placeholder='Return time' required />
+                            <input type="time" name="rtime" id="rtime" onChange={(e) =>setRtime(e.target.value)} placeholder='Return time' required />
                         </div>
                     </div>
                     <div className="submit_reset-Btn">
-                        <button type='submit' onSubmit={()=>alert('Successfully Booked!')}>Book Now</button>
+                        <button type='submit'>Book Now</button>
                         <button type='reset'>Reset Book</button>
                     </div>
                 </form>

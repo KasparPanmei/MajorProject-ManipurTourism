@@ -27,53 +27,95 @@ function Main() {
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Guwahati to Imphal",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Imphal to Delhi",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Delhi to Imphal",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Imphal to Mumbai",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Imphal to USA ",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Imphal to Cannada",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
     {
       link:'/',
       img:Images.imphalairport,
-      title:"Imphal to Guwahati",
+      title:"Kolkata to Imphal",
       briefDescription:"Flight from Imphal International Airport",
       date:"Mar 19 - Mar 26 : Round Trip"
     },
   ]
+
+
+  const whychooseourflight = [
+    {
+      title:"Extensive Options",
+      desc:"From budget-friendly to premium carriers, we offer choices that suit every travel style and budget.",
+    },
+    {
+      title:"User-Friendly Booking Platform",
+      desc:"Booking your flight is just a few clicks away. Our user-friendly platform ensures a hassle-free experience, allowing you to search, compare, and book flights with ease.",
+    },
+    {
+      title:"Best Price Guaranteed",
+      desc:"Enjoy peace of mind with our Best Price Guarantee. We strive to offer competitive prices, ensuring that you get the best value for your money when booking your flights with us.",
+    },
+    {
+      title:"Flexible Booking Options",
+      desc:"Life is unpredictable, and we understand that plans may change. Benefit from our flexible booking options, allowing you to make changes or adjustments to your itinerary as needed.",
+    },
+    {
+      title:"Real-Time Updates",
+      desc:"Stay informed with real-time updates on your flight status. Our platform provides you with the latest information, ensuring that you are well-informed about any changes to your travel plans.",
+    },
+    {
+      title:"Refund Policy",
+      desc:"We understand that circumstances may change, and your peace of mind matters to us. We provide customer-friendly refunds policy for every transaction you made.",
+    }
+  ]
+
+  const  whychooseus = [
+    {
+
+        title:"Exclusive Travel Extras",
+        description:'Enhance your journey with our exclusive travel extras. From airport lounge access to travel insurance, we offer additional services to make your trip even more comfortable.'
+    },
+    {
+        
+        title:"Contact Us",
+        description:'Need assistance or have specific requests? Our dedicated customer support team is available around the clock to assist you. Reach out via [Customer Support Email/Phone] for prompt and friendly service.'
+    }
+  ]
+
   return (
     <div className="container" data-aos="zoom-in" >
       <div className="hero-container" >
@@ -215,6 +257,37 @@ function Main() {
                   <button className='btn'> More</button>
                 </div>
       </div>
+      <div className="flight-services">
+        <div className="heading">
+                  <h3>Why Choose our Flight Booking Platform<span className='firstrow'></span> <span className='secondrow'></span></h3>
+          </div>
+          <div className="WhyChooseOurGuideContent" data-aos="zoom-in">
+      
+            {whychooseourflight.map((whyourguide, index) =>
+            (
+              <div key={index} className="whyourguide">
+                <div className="title">
+                  <h3>{whyourguide.title}</h3>
+                  <p>{whyourguide.desc}</p>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+      {/* morecontents */}
+      <div className="morecontents">
+            {whychooseus.map((choosecontents, index)=>
+            (
+                <div key={index} className="choosecontents">
+                    <div className="title">
+                        <h3>{choosecontents.title}</h3>
+                    </div>
+                    <div className="description">
+                        <p>{choosecontents.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
     </div>
   )
 }

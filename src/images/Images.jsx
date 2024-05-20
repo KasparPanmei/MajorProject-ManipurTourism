@@ -171,6 +171,55 @@ import flightbookinghero from '../images/FlightBooking/Hero.jpg'
 import imphalairport from '../images/FlightBooking/imphalairport.jpg'
 import delhiairport from '../images/FlightBooking/Delhi-Terminal3.jpg'
 
+// Hotel Reservation
+
+import  hotelresvhero from '../images/HotelReservation/Hero.jpg'
+import  aurora from '../images/HotelReservation/Aurora.jpg'
+import  pikitchen from '../images/HotelReservation/PiKitchen.jpg'
+import  ambrosehotel from '../images/HotelReservation/AmbroseHotel.jpg'
+import  circuithouse from '../images/HotelReservation/CircuitHouse.jpg'
+import  classicgrande from '../images/HotelReservation/ClassicGrande.jpg'
+import  threeDhotel from '../images/HotelReservation/3DHotel.jpg'
+import  twobrothers from '../images/HotelReservation/TwoBrothers.jpg'
+import  appoloinn from '../images/HotelReservation/AppoloInn.jpg'
+import  classichotel from '../images/HotelReservation/ClassicHotel.jpg'
+import  rangeroverhotel from '../images/HotelReservation/RangeRoverInn.jpg'
+import  twentyfivedegnorth from '../images/HotelReservation/25DegNorth.jpg'
+import susanhotel from '../images/HotelReservation/Susan.jpg'
+import manipurhouse from '../images/HotelReservation/ManipurHouse.jpg'
+import hotelmajestic from '../images/HotelReservation/HotelMajestic.jpg'
+import jkhotel from '../images/HotelReservation/JKHotel.jpg'
+import morehotels from '../images/HotelReservation/MoreHotels.jpg'
+
+// ExplorePlaces
+
+import exploreplacehero from '../images/ExplorePlaces/Head-Image.jpg'
+
+// icons
+import location from '../images/LoktakLake/gps.jpg'
+
+// loktak
+import loktakfirstimg from '../images/LoktakLake/firstimage.jpg'
+import weather from '../images/LoktakLake/weather.jpg'
+
+// aurora
+import img1 from '../images/Aurora/image1.jpg'
+import img2 from '../images/Aurora/image2.jpg'
+import img3 from '../images/Aurora/image3.jpg'
+import img4 from '../images/Aurora/image4.jpg'
+
+// rent vehicle
+
+import heroImagerental from '../images/RentVehicle/heroImage.jpg'
+import clockicon from '../images/RentVehicle/icons8-clock.gif'
+
+import iconCar from '../images/RentVehicle/iconCar.jpg'
+
+//images for explore places
+import keibullamjao from '../images/Categorised/Bishnupur/SangaiKeibulLamjaoNationalPark.jpg'
+import bunningmeadow from '../images/Categorised/Tamenglong/Buning_rainforestclub.jpg'
+
+
 
 const Images = 
     {
@@ -309,6 +358,49 @@ const Images =
     imphalairport:imphalairport,
     delhiairport:delhiairport,
 
+    // hotel reservation
+    hotelresvhero:hotelresvhero,
+    aurora:aurora,
+    pikitchen:pikitchen,
+    ambrosehotel:ambrosehotel,
+    susanhotel:susanhotel,
+    circuithouse:circuithouse,
+    classicgrande:classicgrande,
+    threeDhotel:threeDhotel,
+    twobrothers:twobrothers,
+    appoloinn:appoloinn,
+    classichotel:classichotel,
+    rangeroverhotel:rangeroverhotel,
+    twentyfivedegnorth:twentyfivedegnorth,
+    manipurhouse:manipurhouse,
+    hotelmajestic:hotelmajestic,
+    jkhotel:jkhotel,
+    morehotels:morehotels,   
+    
+    // Exploreplaces
+    exploreplacehero:exploreplacehero,
+
+    //icons
+    location:location,
+
+    //loktak
+    loktakfirstimg:loktakfirstimg,
+    weather:weather,
+
+    // aurora
+    img1:img1,
+    img2:img2,
+    img3:img3,
+    img4:img4,
+
+    // rental vehicle
+    heroImagerental:heroImagerental,
+    clockicon:clockicon,
+    iconCar:iconCar,
+
+    // explore places images
+    keibullamjao:keibullamjao,
+    bunningmeadow:bunningmeadow,
     }
 
 export default Images

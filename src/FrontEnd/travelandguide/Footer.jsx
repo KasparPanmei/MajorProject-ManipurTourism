@@ -1,8 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../../HomePage.css'
 import Images from '../../images/Images'
+import axios from 'axios'
 import './Footer.css'
 function Footer() {
+
+  const [feedback, setFeedback] = useState();
+  const [feedbackemail, setFeedbackEmail] = useState();
+
+  const FeedbackHandler = (e) =>
+  {
+    e.preventDefault();
+    axios.post('http://localhost:3003/FooterForm',{feedback, feedbackemail})
+    .then(result => alert("Feedback Sent!", result))
+    .catch(err =>console.log(err))
+  }
   return (
     <div className='footer'>
       <div className="backtotop">
@@ -49,10 +61,16 @@ function Footer() {
           </ul>
         </div>
         <div className="contents">
-          <textarea name="feedback" id="" cols="30" rows="5" placeholder='Feedback' required></textarea>
-          <form action="">
-            <input type="email" name="email" id="email" required placeholder='example@gmail.com'/>
-            <button type="submit" onSubmit={()=>alert("Feedback Sent!")}>Send</button>
+          <form action="post" onSubmit={FeedbackHandler}>
+            <textarea name="feedback" id="" cols="30" rows="5" placeholder='Feedback' required onChange={(e) => setFeedback(e.target.value)}></textarea>
+          
+            <div className="input">
+              <input type="email" name="feedbackemail" id="email" onChange={(e) => setFeedbackEmail(e.target.value)} required placeholder='example@gmail.com'/>
+              <div className="btn">
+                <button type="submit" >Send</button>
+                <button type="reset">Reset</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>

@@ -77,7 +77,7 @@
         height: 60%;
         width: 100%;
         background-color: var(--navbar-bg-color);
-        transition: 1s;
+        transition: 100ms;
         transform:translateY(-100vh);
     }
     .nav-links .responsive_nav

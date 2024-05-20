@@ -1,0 +1,218 @@
+
+/* flights for you */
+.morepickcontents
+{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 30px;
+    gap: 10px;
+}
+.morepickcontents a
+{
+    color: var(--aside-bg-color);
+    text-decoration: none;
+    font-family: var(--normal-font-family);
+}
+.toppickscontent
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(290px);
+    height: calc(450px);
+    background-color: var(--card-bg-color);
+    line-height: 30px;
+    
+}
+.toppickscontent .images
+{
+    width: calc(100%);
+    height: calc(250px);
+}
+.toppickscontent .images img
+{
+    width: calc(100%);
+    height: calc(100%);
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.toppickscontent .Description
+{
+    text-align: center;
+    margin: 10px 5px 0 5px;
+    width: calc(90%);
+    font-size: 13px;
+}
+
+
+.readmorebtn
+{
+    margin: 30px 0 20px 0;
+}
+.readmorebtn .btn
+{
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--aside-bg-color);
+    color: var(--normal-font-color);
+    font-family: var(--normal-font-family);
+
+}
+
+.hotelbookingform
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Hotelreservation form
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    flex-direction: row;
+}
+.Hotelreservation form .cols
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form .cols .Greetings-content
+{
+    text-align: left;
+    grid-area: right;
+    margin: 2% 0 0 4%;
+}
+
+.form .cols .Greetings-content h3{
+    font-size: 20px;
+    font-family: "Kaushan Script", cursive;
+    color: var(--normal-font-color);
+    letter-spacing: 2px;
+}
+.form .cols .Greetings-content h3 span
+{
+    color: var(--hero-span-color);
+    font-family: "Kaushan Script", cursive;
+}
+
+.form .cols .radio-btn 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--normal-font-color);
+}
+.form .cols .radio-btn .radioone, .radiotwo
+{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+form .checkbox
+{
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    align-items: center;
+}
+
+.hotelbook
+{
+    padding: 10px;
+    border: 1px solid var(--aside-bg-color);
+    background-color: var(--hero-span-color);
+    color: var(--normal-font-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+@media (max-width:1441.98px) 
+{
+    .toppickscontent
+    {
+        width: calc(250px);
+        height: calc(450px);
+        
+    }
+}
+@media (max-width:1355.98px) 
+{
+    .morepickcontents
+    {
+        gap: 0px;
+    }
+    .toppickscontent
+    {
+        width: calc(230px);
+        height: calc(450px);
+    }
+    .herocontainer
+    {
+        width: calc(100%);
+    }
+    .herocontainer img
+    {
+        width: calc(100%);
+    }
+}
+@media (max-width:1193.98px) 
+{
+    
+    .toppickscontent
+    {
+        width: calc(200px);
+        height: calc(450px);
+    }
+}
+@media (max-width:1097.98px) 
+{
+    .morepickcontents
+    {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    .toppickscontent
+    {
+        width: calc(300px);
+        height: calc(450px);
+    }
+}
+@media (max-width:760.98px) 
+{
+    .morepickcontents
+    {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    .toppickscontent
+    {
+        width: calc(250px);
+        height: calc(450px);
+    }
+}
+@media (max-width:671.98px) 
+{
+    .morepickcontents
+    {
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+    }
+    .toppickscontent
+    {
+        width: calc(300px);
+        height: calc(450px);
+    }
+}

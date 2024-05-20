@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Images from '../../images/Images'
-
+import axios from 'axios';
 import './Main.css'
 import '../../HomePage.css';
 import AOS from 'aos';
@@ -17,21 +17,21 @@ function Main() {
     },
     {
       img: Images.guideportfolio,
-      name: "Kaspar Panmei",
+      name: "Asset A S Zimik",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
       
     },
     {
       img: Images.guideportfolio,
-      name: "Kaspar Panmei",
+      name: "Gaiginlung Pamei",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
       
     },
     {
       img: Images.guideportfolio,
-      name: "Kaspar Panmei",
+      name: "Themchuithot Zingkhai",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
       
@@ -68,6 +68,23 @@ function Main() {
   useEffect(() => {
     AOS.init({duration: 1000});
   }, []);
+
+  const[yourname, setYourName] = useState()
+  const[emailorphoneno, setEmailorPhoneno] = useState()
+  const[whereto, setWhereto] = useState()
+  const[people, setPeople] = useState()
+  const[service, setService] = useState()
+  const[tour, setTour] = useState()
+
+
+  const findGuideForm = (e) =>
+  {
+    e.preventDefault();
+    axios.post('http://localhost:3003/TravelAndGuide/TravelGuideForm',{yourname, emailorphoneno, whereto, people, service, tour})
+    .then(result => alert("Details Booked! Executive will soon be in contact with You.",result))
+    .catch(err => console.log(err))
+  }
+
   return (
     <div className="container" >
       <div className="hero-container" data-aos="zoom-in">
@@ -115,45 +132,46 @@ function Main() {
                 <h3>Find Guide for You<span className='firstrow'></span> <span className='secondrow'></span></h3>
         </div>
         <div className="form">
-          <form action="">
+          <form action="" onSubmit={findGuideForm}>
             <div className="first-inputform">
-              <input required type="text" name="" id="" placeholder='Your Name'/>
-              <input required type="email" name="" id="" placeholder='Email/ Phone no.'/>
+              <input required type="text" name="yourname" id="" placeholder='Your Name' onChange={(e) =>setYourName(e.target.value)}/>
+              <input required type="text" name="emailorphoneno" id="" placeholder='Email/ Phone no.'onChange={(e) =>setEmailorPhoneno(e.target.value)}/>
             </div>
             <div className="second-inputform">
-              <input required type="text" name="" id="" placeholder='Where to...'/>
-              <input required type="text" name="" id="" placeholder='No. of people'/>
+              <input required type="text" name="whereto" id="" placeholder='Where to...' onChange={(e) =>setWhereto(e.target.value)}/>
+              <input required type="text" name="people" id="" placeholder='No. of people' onChange={(e) =>setPeople(e.target.value)}/>
             </div>
             <label htmlFor="optional">Optional</label>
             <div className="optionalinput">
-              <select name="" id="">
-                <option value="">Service Offered</option>
-                <option value="">Airport/Pier Meet & Greet</option>
-                <option value="">Tour Consultant</option>
-                <option value="">Tour Escort</option>
-                <option value="">Tour Guide</option>
-                <option value="">Tour Manager</option>
-                <option value="">Lectures</option>
+              <select name="service" id="" onChange={(e) =>setService(e.target.value)}>
+                <option value="Servi ce Offered">Service Offered</option>
+                <option value="Airport/Peer Meet & Greet">Airport/Pier Meet & Greet</option>
+                <option value="Tour Consultant">Tour Consultant</option>
+                <option value="Tour Escort">Tour Escort</option>
+                <option value="Tour Guide">Tour Guide</option>
+                <option value="Tour Manager">Tour Manager</option>
+                <option value="Lectures">Lectures</option>
               </select>
-              <select name="" id="">
-                <option value="">Tour Types</option>
-                <option value="">Virtual & Online Tour</option>
-                <option value="">Manipur History</option>
-                <option value="">Architectural Tour</option>
-                <option value="">Bicycle Tour</option>
-                <option value="">Parks</option>
-                <option value="">Village</option>
-                <option value="">Hansom Cab Tour</option>
-                <option value="">Helicopter Tour</option>
-                <option value="">Movies & TV Tour</option>
-                <option value="">Music</option>
-                <option value="">Taxi Tour</option>
-                <option value="">Student Tour</option>
-                <option value="">Sport Related Tour</option>
-                <option value="">Private Tour</option>
+              <select name="tour" id="" onChange={(e) =>setTour(e.target.value)}>
+                <option value="Tour Types">Tour Types</option>
+                <option value="Virtual & Online Tour">Virtual & Online Tour</option>
+                <option value="Manipur History">Manipur History</option>
+                <option value="Architectural Tour">Architectural Tour</option>
+                <option value="Bicycle">Bicycle Tour</option>
+                <option value="Parks">Parks</option>
+                <option value="Village">Village</option>
+                <option value="Hansom Cab Tour">Hansom Cab Tour</option>
+                <option value="Helicopter">Helicopter Tour</option>
+                <option value="Movies & TV Tour">Movies & TV Tour</option>
+                <option value="Music">Music</option>
+                <option value="Taxi">Taxi Tour</option>
+                <option value="Student Tour">Student Tour</option>
+                <option value="Sport Related Tour">Sport Related Tour</option>
+                <option value="Private Tour">Private Tour</option>
               </select>
             </div>
-            <button className='findguide-btn'>Find Guide</button>
+            <button type='submit' className='findguide-btn'>Find Guide</button>
+            <button type='reset' className='findguide-btn'>Reset</button>
             <p>A local travel expert will also be available to plan your personal trip for free of charge.</p>
           </form>
         </div>

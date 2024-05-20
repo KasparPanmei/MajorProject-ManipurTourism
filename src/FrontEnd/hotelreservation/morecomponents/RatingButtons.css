@@ -1,0 +1,41 @@
+.ratingBtns
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
+}
+.btn
+{
+    border-radius: 3px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    border: 1px solid var(--aside-bg-color);
+}
+.btn:hover
+{
+    background-color: var(--aside-bg-color);
+    color: var(--normal-font-color);
+}
+.cards button
+{
+    border-radius: 3px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--aside-bg-color);
+    color: var(--normal-font-color);
+}
+
+@media (max-width:579.98px) 
+{
+    .ratingBtns
+    {
+        gap: 10px;
+    }
+}

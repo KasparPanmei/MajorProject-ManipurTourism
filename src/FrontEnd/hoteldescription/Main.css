@@ -1,0 +1,177 @@
+.booknow 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.booknow form
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.booknow form input
+{
+    border: 1px solid var(--aside-bg-color);
+    padding: 10px 5px;
+    border-radius: 4px;
+}
+.booknow .Book-btn
+{
+    margin-top: 10px;
+}
+.hotel-contents .rating
+{
+    text-align: left;
+    line-height: 35px;
+}
+
+/* imagescontents */
+
+.picturesofthehotel 
+{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.picturesofthehotel .imagescontents
+{
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+}
+.picturesofthehotel .imagescontents .flexcolumn-col
+{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 13rem;
+    font-size: larger;
+}
+.picturesofthehotel .imagescontents .t-col
+{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 13rem;
+    font-size: larger;
+}
+
+.availability
+{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* reviews and map */
+.reviews-and-map
+{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: none;
+    background-color: var(--navbar-bg-color);
+}
+
+.reviews-and-map .Greetings-content h3{
+    color: black;
+}
+.map
+{
+    width: 600px !important;
+    height: 100% !important;
+}
+.map iframe
+{
+    width: 100% !important;
+    height: 100%;
+}
+
+/* reviews */
+.reviews .wholereviews
+{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    color: var(--normal-font-color);
+    line-height: 20px;
+}
+.reviews .wholereviews .name-icons 
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 20px;
+    gap: 10px;
+}
+.reviews .wholereviews .name-icons span
+{
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(36, 172, 196);
+}
+.reviews .wholereviews .morereviews
+{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.reviews .wholereviews .morereviews p
+{
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+    
+}
+
+@media (max-width:1253.98px) 
+{
+    .picturesofthehotel 
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:1049.98px) 
+{
+    .map
+    {
+        width: 500px !important;
+        height: 100% !important;
+    }
+}
+@media (max-width:981.98px) 
+{
+    .reviews-and-map
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .map
+    {
+        width: 100% !important;
+        height: 400px !important;
+    }
+}
+@media (max-width:658.98px) 
+{
+    .picturesofthehotel 
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .reviews-and-map
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .map
+    {
+        width: 100% !important;
+        height: 400px !important;
+    }
+}
