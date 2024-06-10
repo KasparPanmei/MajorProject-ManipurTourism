@@ -162,7 +162,10 @@ import applepay from '../images/Icons/PaymentIcons/applepay.png'
 // travel and guides
 
 import TravelGuidehero from '../images/TravelGuide/hero.jpg'
-import guideportfolio from '../images/TravelGuide/porfolio.jpg'
+import guideportfolio from '../images/TravelGuide/LAS-HIKINGTOUR2-1024x768.jpg'
+import guideportfolio1 from '../images/TravelGuide/OIP (1).jpeg'
+import guideportfolio2 from '../images/TravelGuide/OIP.jpeg'
+import guideportfolio3 from '../images/TravelGuide/guides-girlguiding-dorset.jpg'
 import backgroundimage from '../images/TravelGuide/photographer-landscape-blake-cheek-662709-unsplash-1024x464 1.jpg'
 
 // flight booking
@@ -352,6 +355,9 @@ const Images =
     TravelGuidehero:TravelGuidehero,
     guideportfolio:guideportfolio,
     backgroundimage:backgroundimage,
+    guideportfolio1:guideportfolio1,
+    guideportfolio2:guideportfolio2,
+    guideportfolio3:guideportfolio3,
 
     // flight booking
     flightbookinghero:flightbookinghero,

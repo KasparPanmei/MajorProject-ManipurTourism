@@ -1,0 +1,108 @@
+.nav
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav .top_navbar
+{
+    width: calc(100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-bg-color);
+}
+.logo, ul
+{
+    padding: 5px;
+    margin: 0 20px 0 20px;
+}
+.login-icons ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    list-style: none;
+}
+.login-icons img
+{
+    width: calc(30px);
+}
+.Bottom_navbar{
+    display: none;
+    width: calc(100%);
+    background-color: var(--navbar-bg-color);
+}
+
+.Bottom_navbar .nav-links ul 
+{
+    color: var(--normal-font-color);
+}
+.Bottom_navbar button
+{
+    width: calc(30px);
+    height: calc(30px);
+}
+.Bottom_navbar button img
+{
+    width: calc(100%);
+    height: calc(100%);
+}
+
+.nav-btn
+{
+    background: transparent;
+    border: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+@media (max-width:440.98px) 
+{
+    .Bottom_navbar{
+        display: flex;
+    }
+    .nav-btn
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+    .nav-links nav
+    {
+        position: fixed !important;
+        top: 70px;
+        left: 0;
+        height: 60%;
+        width: 100%;
+        background-color: var(--navbar-bg-color);
+        transition: 100ms;
+        transform:translateY(-100vh);
+    }
+    .nav-links .responsive_nav
+    {
+        transform: none;
+    }
+    .nav-btn
+    {
+        margin-left: 30px;
+    }
+    .nav-links .close-btn
+    {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        width: calc(50px);
+        height: calc(50px);
+        padding: 10px;
+    }
+    .login-icons img
+    {
+        width: calc(20px);
+    }
+    .list-style
+    {
+        line-height: 30px;
+    }
+}

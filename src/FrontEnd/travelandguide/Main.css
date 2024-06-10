@@ -44,6 +44,35 @@
     background-color: #E8FEE8;
 }
 
+.portfoliocontent .image
+{
+    width: 200px;
+    height: 200px;
+}
+.portfoliocontent .image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfoliocontent .rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.portfoliocontent .rating .msg
+{
+    width: 30px;
+    height: 30px;
+}
+.portfoliocontent .rating .msg img
+{
+    width: 100%;
+    height: 100%;
+}
+
 .second-content
 {
     display: flex;

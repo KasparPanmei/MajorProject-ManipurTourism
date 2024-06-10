@@ -228,11 +228,12 @@ function Main() {
   const[rtime, setRtime] = useState()
 
 
+  
   const handleFormSubmit = (e) =>
   {
     e.preventDefault();
     axios.post('http://localhost:3003/HomePageform',{noofwayone, noofwaytwo,from,destination,name,phone,email,date,number,childrenYes,childrenNo,dtime,rtime})
-    .then(result => alert(result))
+    .then(result => alert("You've successfully booked an Overall Data. An Executive will be in contact with you ASAP!", result))
     .catch(err => console.log(err))
   }
 

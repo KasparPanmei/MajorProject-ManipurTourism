@@ -1,5 +1,6 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 import AOS from 'aos';
 import 'aos/dist/aos';
 import Images from '../../images/Images.jsx'
@@ -9,6 +10,22 @@ function Main()
   useEffect(() => {
     AOS.init({duration: 1000});
   }, []);
+
+
+  const [pickuplocation, setPickUpLocation] = useState();
+  const [destination, setDestination] = useState();
+  const [way, setWay] = useState();
+  const [vehicle, setVehicle] = useState();
+  const [pickup, setPickUp] = useState();
+  const [time, setTime] = useState();
+
+  const RentalVehicle = (e) =>
+    {
+      e.preventDefault();
+      axios.post('http://localhost:3003/RentalVehicle', {pickuplocation, destination, way, vehicle, pickup, time})
+      .then(result => alert('Details has been Booked! Executive will be in Contact with You ASAP', result))
+      .catch(err =>console.log(err))
+    }
 
   return   (
     <div className='TaxiAndRentVehicle'>
@@ -30,13 +47,13 @@ function Main()
         <h3>Request a Ride Now or Later <span className='firstrow'></span> <span className='secondrow'></span></h3>
       </div>
       {/* booking form  */}
-      <form action="" data-aos='zoom-in'>
+      <form action="" data-aos='zoom-in' onSubmit={RentalVehicle}>
       <h4>Plan Your Ride!</h4>
         <div className="form">
           <div className="locationinput">
             <div className="input-data-of-two">
-              <input type="text" placeholder="Enter pick up location" name='pickuplocation' />
-              <input type="text" name="destination" id="" placeholder='Enter Destination' />
+              <input type="text" placeholder="Enter pick up location" name='pickuplocation' onChange={(e) =>setPickUpLocation(e.target.value)}  required/>
+              <input type="text" name="destination" id="" placeholder='Enter Destination' onChange={(e) =>setDestination(e.target.value)} />
             </div>
           </div>
         </div>
@@ -44,17 +61,25 @@ function Main()
             <div className="first-grid">
               <h4>Choose Ride Type!</h4>
               <div className="no-of-way-input">
-                <input type="button" value="One Way" name='oneway' className='btn'/>
-                <input type="button" value="With Stop" name='withstop' className='btn'/>
-                <input type="button" value="Round Trip" name='roundtrip' className='btn'/>
+                <label htmlFor="">One Way</label>
+                <input type="radio" value="One Way" name='way' className='btn' onChange={(e) =>setWay(e.target.value)}/>
+                <label htmlFor="">With Stop</label>
+                <input type="radio" value="With Stop" name='way' className='btn' onChange={(e) =>setWay(e.target.value)}/>
+                <label htmlFor="">Round Trip</label>
+                <input type="radio" value="Round Trip" name='way' className='btn' onChange={(e) =>setWay(e.target.value)}/>
               </div>
               <h4>** Optional ** Choose Vehicle Type</h4>
               <div className="no-of-way-input">
-                <input type="button" value="Car" name='car' className='btn'/>
-                <input type="button" value="Bus" name='bus' className='btn'/>
-                <input type="button" value="Auto" name='auto' className='btn'/>
-                <input type="button" value="Shuttle" name='shuttle' className='btn'/>
-                <input type="button" value="Bike" name='bike' className='btn'/>
+                <label htmlFor="">Car</label>
+                <input type="radio" value="Car" name='vehicle' className='btn' onChange={(e) =>setVehicle(e.target.value)}/>
+                <label htmlFor="">Bus</label>
+                <input type="radio" value="Bus" name='vehicle' className='btn'  onChange={(e) =>setVehicle(e.target.value)}/>
+                <label htmlFor="">Auto</label>
+                <input type="radio" value="Auto" name='vehicle' className='btn'  onChange={(e) =>setVehicle(e.target.value)}/>
+                <label htmlFor="">Shuttle</label>
+                <input type="radio" value="Shuttle" name='vehicle' className='btn'  onChange={(e) =>setVehicle(e.target.value)}/>
+                <label htmlFor="">Bike</label>
+                <input type="radio" value="Bike" name='vehicle' className='btn'  onChange={(e) =>setVehicle(e.target.value)}/>
               </div>
             </div>
             <div className="second-grid">
@@ -66,16 +91,16 @@ function Main()
               <div className="checkbox">
                 <div className="first-checkbox">
                   <label htmlFor="Pickup">Pick Up Now</label>
-                  <input type="radio" name="pickup" id="" value="Pick Up Now" />
+                  <input type="radio" name="pickup" id="" value="Pick Up Now"  onChange={(e) =>setPickUp(e.target.value)} />
                 </div>
                 <div className="second-checkbox">
                   
                   <div className="sub-check-input">
                     <div className="moreflex-onlaterinput">
                       <label htmlFor="Pickuplater">Pick Up Later</label>
-                      <input type="radio" name="pickup" id="" value="Pick Up Later" />
+                      <input type="radio" name="pickup" id="" value="Pick Up Later"   onChange={(e) =>setPickUp(e.target.value)}/>
                     </div>
-                    <input type="time" name="time" id="" />
+                    <input type="time" name="time" id=""  onChange={(e) =>setTime(e.target.value)} />
                   </div>
                 </div>
               </div>

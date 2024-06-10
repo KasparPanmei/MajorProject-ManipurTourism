@@ -1,0 +1,145 @@
+.footer
+{
+   background-color: var(--navbar-bg-color);
+}
+.footer .backtotop
+{
+    padding: 10px;
+}
+
+.footer .backtotop a
+{
+    color: var(--normal-font-color);
+    text-decoration: none;
+}
+
+.footercontents
+{
+    background-color: var(--aside-bg-color);
+    width: calc(100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    line-height: 30px;
+    font-family: var(--normal-font-family);
+    
+}
+.footercontents .contents
+{
+    margin: 5px 0 30px 0;
+}
+.footercontents .contents form
+{
+    display: flex;
+    align-items: center;
+
+}
+.footercontents .contents form .btn
+{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+}
+.footer .footercontents h3{
+    text-align: left;
+    font-size: 16px;
+    color: var(--normal-font-color);
+}
+
+.footer .footercontents ul li
+{
+    list-style: none;
+    text-align: left;
+    
+}
+.footer .footercontents ul li a 
+{
+    color: var(--normal-font-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.footer .footercontents .social_links
+{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.footer .footercontents .social_links li a img
+{
+    width: calc(20px);
+    height: calc(20px);
+    object-fit: contain;
+}
+
+.footer .footercontents .Payonline
+{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer .footercontents .Payonline li a img
+{
+    width: calc(30px);
+    height: calc(30px);
+    object-fit: contain;
+}
+
+.footer .contents li a:hover
+{
+    opacity: 0.5;
+}
+
+
+.footer .contents textarea
+{
+    width: calc(100%);
+    margin-top: 10px;
+    border-radius: 4px;
+    font-family: var(--normal-font-family);
+}
+textarea:focus
+{
+    outline: none;
+}
+
+.contents form
+{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.contents form input
+{
+    padding: 10px;
+    width: calc(100%);
+    border: none;
+    border-radius: 4px;
+}
+
+.contents form button
+{
+    border: none;
+    cursor: pointer;
+    padding: 3px 15px;
+    border-radius: 4px;
+    color: var(--normal-font-color);
+    background-color: var(--navbar-bg-color);
+}
+
+@media (max-width:465.98px) 
+{
+    .footercontents
+    {
+        flex-direction: column;
+    }
+    .footercontents .contents
+    {
+        width: calc(80%);
+        margin: 5px 0 30px 20px;
+    }
+}

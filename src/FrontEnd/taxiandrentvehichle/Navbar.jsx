@@ -12,9 +12,6 @@ function Navbar() {
       {name:"Hotel & Reservations",link:"/HotelReservation"},
       {name:"Taxi & Rent Vehicle",link:"/RentVehicle"},
       {name:"Flight Booking",link:"/TaxiandFlightBooking"},
-      {name:"Park & Gardens",link:"/ParkGarden"},
-      {name:"Camping & Travelling Kits",link:"/Camping"},
-      {name:"Cultural & Traditional Items",link:"/Cultural"},
       {name:"Our Gallery",link:"/About"},
   ]
   const navRef = useRef();

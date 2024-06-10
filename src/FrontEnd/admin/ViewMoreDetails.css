@@ -1,0 +1,15 @@
+.AdminSideViewMoreDetails-Page input
+{
+    background-color: transparent;
+    color: var(--normal-font-color);
+    cursor: not-allowed;
+    text-align: center;
+}
+.AdminSideViewMoreDetails-Page .btn
+{
+    color: var(--normal-font-color);
+    border: 1px solid var(--normal-font-color);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+}

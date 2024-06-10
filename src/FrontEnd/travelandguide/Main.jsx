@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+
 import Images from '../../images/Images'
 import axios from 'axios';
 import './Main.css'
@@ -13,24 +14,25 @@ function Main() {
       name: "Kaspar Panmei",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
+      link: "https://wa.me/9233102848" 
       
     },
     {
-      img: Images.guideportfolio,
+      img: Images.guideportfolio1,
       name: "Asset A S Zimik",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
       
     },
     {
-      img: Images.guideportfolio,
+      img: Images.guideportfolio2,
       name: "Gaiginlung Pamei",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
       
     },
     {
-      img: Images.guideportfolio,
+      img: Images.guideportfolio3,
       name: "Themchuithot Zingkhai",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
@@ -106,7 +108,7 @@ function Main() {
         <div className="portfolio">
           {Guides.map((portfoliocontent, index) =>
           (
-            <div key={index}className="portfoliocontent">
+              <div key={index}className="portfoliocontent">
               <div className="image">
                 <img src={portfoliocontent.img} alt="guideportfolioi" />
               </div>
@@ -119,7 +121,12 @@ function Main() {
                   <p>{portfoliocontent.motto}</p>
                 </div>
                 <div className="rating">
-                  <h3>Rating {portfoliocontent.rating}</h3>
+                  <div className="msg">
+                    <a href="https://wa.me/9233102848" ><img src={Images.whatsapp} alt="" /></a>
+                  </div>
+                  <div className="button">
+                    <button type='button' className='btn'>Book Now</button>
+                  </div>
                 </div>
               </div>
             </div>
