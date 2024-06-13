@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import {Link} from 'react-router-dom'
 import './Main.css'
 import '../../HomePage.css'
@@ -6,8 +6,14 @@ import axios from 'axios'
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Images from '../../images/Images';
-
+import emailjs from '@emailjs/browser'
 function Main() {
+  // send email form
+
+  const form = useRef();
+
+  // end
+
   useEffect(()=>
   {
     AOS.init({duration:1000});
@@ -235,6 +241,21 @@ function Main() {
     axios.post('http://localhost:3003/HomePageform',{noofwayone, noofwaytwo,from,destination,name,phone,email,date,number,childrenYes,childrenNo,dtime,rtime})
     .then(result => alert("You've successfully booked an Overall Data. An Executive will be in contact with you ASAP!", result))
     .catch(err => console.log(err))
+    // form
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ccwjodb', 'template_qtjhy57', form.current, {
+        publicKey: '_HjchQPydeylyyBQ7',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   }
 
   return (
@@ -361,7 +382,7 @@ function Main() {
                 <p className='second-para'>Secure your spot on this unforgettable journey by booking now.</p>
             </div>
             <div className="booking-second-content">
-                <form action="" onSubmit={handleFormSubmit}>
+                <form action="" onSubmit={handleFormSubmit } ref={form}>
                     <div className="radiobtn">
                         <input type="radio" name="noofway" value="One Way" id="way" onChange={(e) =>setNoofwayone(e.target.value)}/>One Way
                         <input type="radio" name="noofway" value="Two Way" id="way" onChange={(e) =>setNoofwaytwo(e.target.value)}/>Two Way

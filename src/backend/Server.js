@@ -17,6 +17,7 @@ const collection = require("../backend/models/User.js")
 
 const RentalVehicle = require('../backend/models/RentalVehicles.js')
 
+const TravelGuideBookingPayment = require('../backend/models/TravelGuideBookPayment.js')
 
 const app = express();
 
@@ -90,6 +91,11 @@ app.post('/RentalVehicle',(req,res) =>
     RentalVehicle.create(req.body)
     .then(RentVehicle =>res.json(RentVehicle)).catch(err => res.json(err))
 })
+app.post('/TravelGuideBookingpayment',(req,res) =>
+{
+    TravelGuideBookingPayment.create(req.body)
+    .then(TravelGuideBookingPayment =>res.json(TravelGuideBookingPayment)).catch(err => res.json(err))
+})
 
 //Login API
 app.get('/Login', cors(), (req,res) => {
@@ -97,7 +103,7 @@ app.get('/Login', cors(), (req,res) => {
 })
 
 app.post('/Login', async(req, res) => {
-    const{Email, Password} = req.body
+    const{Email} = req.body
 
     try{
         const check = await collection.findOne({Email:Email})

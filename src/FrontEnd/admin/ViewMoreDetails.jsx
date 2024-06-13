@@ -30,7 +30,9 @@ function ViewMoreDetails() {
         setDtime(result.data.dtime)
         setRtime(result.data.rtime)})
         .catch(err => console.log(err))
-        }, [])
+        // eslint-disable-next-line
+        },[]);
+
         const handlePrint = () =>
             {
                 window.print();

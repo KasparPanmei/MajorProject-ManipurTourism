@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-
+import {Link} from "react-router-dom"
 import Images from '../../images/Images'
 import axios from 'axios';
 import './Main.css'
@@ -14,8 +14,8 @@ function Main() {
       name: "Kaspar Panmei",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
-      link: "https://wa.me/9233102848" 
-      
+      link: "https://wa.me/9233102848" ,
+      redirect: "/TravelGuide/BookGuide",
     },
     {
       img: Images.guideportfolio1,
@@ -26,7 +26,7 @@ function Main() {
     },
     {
       img: Images.guideportfolio2,
-      name: "Gaiginlung Pamei",
+      name: "Gaikinlung Pamei",
       pricerate: "₹ 1200 /hr",
       motto: "A zeal to meet new people and show around my state",
       
@@ -125,7 +125,7 @@ function Main() {
                     <a href="https://wa.me/9233102848" ><img src={Images.whatsapp} alt="" /></a>
                   </div>
                   <div className="button">
-                    <button type='button' className='btn'>Book Now</button>
+                  <Link className='btn' style={{textDecoration:"none" }} target='_blank' to={portfoliocontent.redirect}>Book Now</Link>
                   </div>
                 </div>
               </div>

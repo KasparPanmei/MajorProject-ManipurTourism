@@ -17,7 +17,9 @@ import Loktak from './Loktak.jsx';
 import HotelDescription from './HotelDescription.jsx';
 import Admin from './Admin.jsx'
 import ViewMoreDetails from './FrontEnd/admin/ViewMoreDetails.jsx'
-import ParticularTravelGuide from './ParticularTravelGuide.jsx';
+import TravelGuideBook from './TravelGuideBook.jsx';
+import PaymentSuccess from "./razorpaytutorial/frontend/src/PaymentSuccess.jsx";
+
 function App() {
   return (
     <div className="App">
@@ -39,8 +41,8 @@ function App() {
           <Route path='/HotelReservation/Aurora-Boutique' element={<HotelDescription />} />
           <Route path='/Admin' element={<Admin />} />
           <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
-          <Route path='/TravelGuide/Guide' element={<ParticularTravelGuide />} />
-
+          <Route path='/TravelGuide/BookGuide' element={<TravelGuideBook />} />
+          <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         </Routes>
       </BrowserRouter>
     </div>
