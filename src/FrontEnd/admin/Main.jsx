@@ -1,168 +1,197 @@
-import React, {useState, useEffect} from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos'
-import {Link} from 'react-router-dom'
-import Images from '../../images/Images'
-import './Main.css'
-// import {Link} from 'react-router-dom'
-import axios from "axios";
+import { Card, Space, Statistic, Table, Typography } from 'antd'
+import React, { useEffect, useState } from 'react'
+import { BookOutlined, DollarCircleOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons'
+import axios from 'axios'
+
+
+
 
 
 function Main() {
-//for tours booked
-  const [users, setUsers] = useState([])
+  const [tours, setTours] = useState(0);
+  const [customers, setCustomers] = useState(0);
+  // const [guides, setGuides] = useState(0);
 
-  //fetching for toursbooked
   useEffect(() => {
-    axios.get('http://localhost:3003/admin')
-    .then(result => setUsers(result.data))
-    .catch(err => console.log(err))
-}, [])
+    const fetchCount = async () => {
+      const response = await axios.get('http://localhost:3003/admin');
+      setTours(response.data.tours)
+      setCustomers(response.data.customers)
+    };
 
-//for feedbacks
-const [feeds, setFeeds] = useState([])
+    fetchCount();
+    // axios.get('http://localhost:3003/admin')
+    // .then((res) => {
+    //   setTours(res.total)
+    //   setCustomers(res.total)
+    // });
 
-//fetching for feedback
-useEffect(() => {
-  axios.get('http://localhost:3003/admin/feedback')
-  .then(result => setFeeds(result.data))
-  .catch(err => console.log(err))
-}, [])
+    // axios.get('http://localhost:3003/guides')
+    // .then((res) => {
+    //   setGuides(res.total)
+    // });
+  }, []);
 
-
-
-  const [toggleState, setToggleState] = useState(1);
-
-  const toggletab =(index) =>
-    {
-      setToggleState(index);
-    }
-    useEffect(()=>
-      {
-        AOS.init({duration:1000});
-      },[]); 
   return (
-    <div className='AdminSideMain-Page'>
-      <div className="explorebyinterest" data-aos='zoom-in'>
+    <Space size={30} direction="vertical">
 
-        <div className="block-tabs">
-          <div className={toggleState === 1? "tabs active-tabs": "tabs"} onClick={() => toggletab(1)}>
-            <button class='ta' id='Admin-Btn'>TOURS BOOKED</button>
-          </div>
-          <div className={toggleState === 2? "tabs active-tabs": "tabs"} 
-          onClick={() => toggletab(2)}>
-            <button class='ta'  id='Admin-Btn'>HOTELS BOOKED</button>
-          </div>
-          <div className={toggleState === 3? "tabs active-tabs": "tabs"}
-           onClick={() => toggletab(3)}>
-            <button class='ta'  id='Admin-Btn'>FEEDBACKS</button>
-          </div>
-        </div>
+       <Typography.Title level={4}>Dashboard</Typography.Title>
 
-        <div className="tabs-contents" data-aos='zoom-in'>
+       <Space direction='horizontal'>
+        <DashboardCard 
+        icon = {<BookOutlined 
+          style={{
+            color:"green", 
+            backgroundColor:'rgba(0, 255, 0, 0.25)', 
+            borderRadius: 20,
+            fontSize: 24,
+            padding: 8,
+          
+          }} 
+          />
+          } 
+          title={"Tours Booked"} 
+          value={tours} 
+        />
 
-          <div className={toggleState ===1? "active-content" : "block-contents "}>
-           <div className="images">
-            <table className="tables">
-              <div className="column">
-                <h3>Name</h3>
-                <div className="dynamicData">
-                {
-                  users.map((user) => {
-                   return<tr>
-                    <td>{user.name}</td>
-                   </tr>
-                  })
-                }
-                </div>
-              </div>
-              <div className="column">
-                <h3>Email</h3>
-                <div className="dynamicData">
-                {
-                  users.map((user) => {
-                   return<tr>
-                    <td>{user.name}</td>
-                   </tr>
-                  })
-                }
-                </div>
-              </div>
-              <div className="column">
-                <h3>Phone Number</h3>
-                <div className="dynamicData">
-                {
-                  users.map((user) => {
-                   return<tr>
-                    <td>{user.phone}</td>
-                   </tr>
-                  })
-                }
-                </div>
-              </div>
-              <div className="column">
-                <h3>View More</h3>
-                <div className="dynamicData">
-                {
-                  users.map((user) => {
-                   return<tr>
-                     <Link to={`/ViewMoreDetails/${user._id}`} target='_blank' style={{textDecoration:'none', color:'white'}}className='btn'>View More</Link>
-                   </tr>
-                  })
-                }
-                </div>
-              </div>
-            </table> 
-           </div>
-          </div>
+        <DashboardCard 
+        icon = {<UserOutlined
+          style={{
+            color:"red", 
+            backgroundColor:'rgba(255,0, 0, 0.25)', 
+            borderRadius: 20,
+            fontSize: 24,
+            padding: 8,
+          
+          }} 
+        />
+        } 
+        title={"Customers"} 
+        value={customers} 
+        />
 
+        <DashboardCard 
+        icon = {<TeamOutlined
+          style={{
+            color:"purple", 
+            backgroundColor:'rgba(0, 255, 255, 0.25)', 
+            borderRadius: 20,
+            fontSize: 24,
+            padding: 8,
+          
+          }} 
+        />
+        } 
+        title={"Guides Hired"} 
+        value={100} 
+        />
 
-          <div className={toggleState ===2? "active-content" : "block-contents "}>
-           <div className="images">
-            <div className="image">
-              <img src={Images.bishnupurlakeswaterfall} alt="" />
-            </div>
-            <div className="image">
-              <img src={Images.churchandpurlakeswaterfall} alt="" />
-            </div>
-            <div className="image">
-              <img src={Images.ukhrullakeswaterfall} alt="" />
-            </div>
-            <div className="image">
-              <img src={Images.tmllakeswaterfall} alt="" />
-            </div>
-           </div>
-          </div>
+        <DashboardCard 
+        icon = {<DollarCircleOutlined
+          style={{
+            color:"blue", 
+            backgroundColor:'rgba(0, 0, 255, 0.25)', 
+            borderRadius: 20,
+            fontSize: 24,
+            padding: 8,
+          
+          }} 
+        />
+       } 
+        title={"Revenue"} 
+        value={100} 
+        />
+       </Space>
+       <Space>
+        <RecentBooks />
+      </Space>
+    </Space>
+  );
+}
 
+function DashboardCard({title, value, icon}){
+  return(
+    <Card>
+      <Space direction='horizontal'>
+        {icon}
+        <Statistic title={title} value={value}/>
+      </Space>  
+    </Card>
 
-          <div className={toggleState ===3? "active-content" : "block-contents "}>
-           <div className="images">
-           <table className="">
-              <thread>
-                <tr>
-                  <th>Feedbacks</th>
-                  <th>Email</th>
-                </tr>
-              </thread>
-              <tbody>
-                {
-                  feeds.map((feed) => {
-                   return<tr>
-                    <td>{feed.feedback}</td>
-                    <td>{feed.feedbakemail}</td>
-                    
-                   </tr>
-                  })
-                }
-              </tbody>
-              
-            </table> 
-           </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  );
+}
+
+function RecentBooks(){
+
+  const [tours, setTours] = useState([])
+  const [loading, setloading] = useState(true);
+
+  useEffect(() => {
+   getData()
+  }, []);
+
+  const getData = async () => {
+    await axios.get('http://localhost:3003/admin/').then
+    (
+      res => {
+        setloading(false);
+        setTours(
+          res.data.splice(0,4).map(row => ({
+            Name: row.name,
+            Email: row.email,
+            From: row.from,
+            Destination: row.destination,         
+          }))
+        );
+        
+       
+      }
+    )
+    
+  };
+
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "Name",
+      width: 150
+    },
+    {
+      title: "Email",
+      dataIndex: "Email",
+      width: 150
+    },
+    {
+      title: "From",
+      dataIndex: "From",
+      width: 150
+    },
+    {
+      title: "Destination",
+      dataIndex: "Destination",
+      width: 150
+    }
+  ];
+
+  return (
+   <div>
+    <Typography.Title level={4}  style={{background: "rgba(0,255,0,0.25)", color: "Green"}}>Recent Books</Typography.Title>
+    {
+      loading? (
+        "Loading"
+      ) : (
+        
+        <Table 
+         columns={columns}
+         dataSource={tours}
+         pagination={false}
+         loading={loading}       
+/>
+      )
+    }
+   </div>
+  );
 }
 
 export default Main
+

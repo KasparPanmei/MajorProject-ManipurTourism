@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useParams} from 'react-router-dom'
 import './Main.css'
 import './ViewMoreDetails.css'
+import Images from '../../../images/Images'
+import { useReactToPrint } from 'react-to-print'
 // import {Link} from 'react-router-dom'
 import axios from "axios";
 
@@ -32,13 +34,24 @@ function ViewMoreDetails() {
         .catch(err => console.log(err))
         // eslint-disable-next-line
         },[]);
+        
+        const PrintRef = useRef();
 
-        const handlePrint = () =>
-            {
-                window.print();
-            }
+        const handlePrint = useReactToPrint(
+          {
+            content:() => PrintRef.current
+          }
+        )
   return (
-    <div className='AdminSideViewMoreDetails-Page'>
+    <div className="allcontents">
+      <div className='AdminSideViewMoreDetails-Page' ref={PrintRef}>
+      <div id="printData" >
+      <div className="logo">
+        <img src={Images.Logo} alt="" />
+      </div>
+      <div className="content">
+        <h3 style={{color:"var(--normal-font-color)"}}>***********Booked Details***********</h3>
+      </div>
             <table className="tables">
               <div className="column">
                 <h3>Name</h3>
@@ -88,10 +101,14 @@ function ViewMoreDetails() {
                 <input type="text" name="rtime" id="" value={rtime} />
                 </div>
               </div>
-              <button type='button' onClick={handlePrint} className='btn'>Print Data</button>
+             
             </table> 
-            
+      </div>
     </div>
+    
+<button type='button' onClick={handlePrint} style={{marginBottom:'20px'}} className='btn'>Print Data</button>
+    </div>
+
   )
 }
 

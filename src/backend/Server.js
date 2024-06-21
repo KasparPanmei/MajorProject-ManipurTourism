@@ -42,7 +42,29 @@ app.get('/admin', (req, res) => {
     .then(homebookingcontacts =>res.json(homebookingcontacts))
     .catch(err => res.json(err))
 
+});
+ //count of tours booked documents
+app.get('/admin', async (req, res) => {
+    const count = await homebookingcontacts.countDocuments();
+    res.json({count});
+});
+
+//fetch and display Tourguides booked
+app.get('/guides', (req, res) => {
+    TravelAndGuide.find({})
+    .then(Guidesbooking =>res.json(Guidesbooking))
+    .catch(err => res.json(err))
+
 })
+
+//fetch and display Tourguides booked
+app.get('/hotel', (req, res) => {
+    HotelBookingForm.find({})
+    .then(Hotelbooking =>res.json(Hotelbooking))
+    .catch(err => res.json(err))
+
+})
+
 
 app.get('/admin/getUserDetails/:id',(req, res) =>
 {

@@ -1,13 +1,13 @@
 import React from 'react'
 import './HomePage.css'
 
-import Navbar from './FrontEnd/admin/Navbar.jsx'
-import Aside from './FrontEnd/admin/Aside.jsx'
-import Main from './FrontEnd/admin/Main.jsx'
+import Navbar from './FrontEnd/admin/toursguides/Navbar.jsx'
+import Aside from './FrontEnd/admin/toursguides/Aside.jsx'
+import Main from './FrontEnd/admin/toursguides/Main.jsx'
 
-function Admin() {
+function TourGuidesHired() {
   return (
-    <div className='AdminBooking'>
+    <div className='toursguidesBooking'>
       <div className="gridContainer">
         <nav className='navbar'><Navbar /></nav>
         <aside className='Aside'><Aside  /></aside>
@@ -17,4 +17,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default TourGuidesHired

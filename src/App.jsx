@@ -15,8 +15,17 @@ import Login from './Login.jsx'
 import ExplorePlaces from './ExplorePlaces.jsx'
 import Loktak from './Loktak.jsx';
 import HotelDescription from './HotelDescription.jsx';
+
 import Admin from './Admin.jsx'
-import ViewMoreDetails from './FrontEnd/admin/ViewMoreDetails.jsx'
+import Customers from './Customers.jsx'
+import HotelsBooked from './HotelsBooked.jsx'
+import TourGuidesHired from './TourGuidesHired.jsx'
+import ToursBooked from './ToursBooked.jsx'
+import ViewMoreDetails from './FrontEnd/admin/toursbooked/ViewMoreDetails.jsx'
+
+
+
+
 import TravelGuideBook from './TravelGuideBook.jsx';
 import PaymentSuccess from "./razorpaytutorial/frontend/src/PaymentSuccess.jsx";
 
@@ -39,8 +48,14 @@ function App() {
           <Route path='/Login' element={<Login/> }/>
           <Route path='/exploreplaces/districts/bishnupur/loktaklake' element={<Loktak /> }/>
           <Route path='/HotelReservation/Aurora-Boutique' element={<HotelDescription />} />
+
           <Route path='/Admin' element={<Admin />} />
-          <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
+          <Route path='/Customers' element={<Customers/>} />
+          <Route path='/HotelsBooked' element={<HotelsBooked/>} />
+          <Route path='/TourGuidesHired' element={<TourGuidesHired/>} />
+          <Route path='/ToursBooked' element={<ToursBooked/>} />
+          <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />  
+          
           <Route path='/TravelGuide/BookGuide' element={<TravelGuideBook />} />
           <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         </Routes>
