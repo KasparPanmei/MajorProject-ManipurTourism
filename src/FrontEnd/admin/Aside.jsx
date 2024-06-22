@@ -13,7 +13,7 @@ function Aside() {
                         <Link to="/ToursBooked" className={"list-style"}>Tours Booked</Link>
                         <Link to="/TourGuidesHired" className={"list-style"} >Tour Guides Hired</Link>
                         <Link to="/HotelsBooked" className={"list-style"} >Hotels Booked</Link>
-                        
+                        <p style={{marginTop:"20px", color:"var(--normal-font-color)"}}><em>*Note* Latest Booked at the bottom</em></p>
                     </ul>
                 </nav>
       </div>

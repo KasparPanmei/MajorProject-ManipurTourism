@@ -44,8 +44,8 @@ app.get('/admin', (req, res) => {
 
 });
  //count of tours booked documents
-app.get('/admin', async (req, res) => {
-    const count = await homebookingcontacts.countDocuments();
+app.get('/admin/count', async (req, res) => {
+    const count = await HomeBooking.countDocuments();
     res.json({count});
 });
 

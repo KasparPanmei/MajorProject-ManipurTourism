@@ -17,6 +17,7 @@ const HomePageBooking = new mongoose.Schema(
         dtime: String,
         rtime: String
     }
+    ,{ timestamps: true }
 );
 
 const HomeBooking = mongoose.model('HomePageBookingFormEntries', HomePageBooking);

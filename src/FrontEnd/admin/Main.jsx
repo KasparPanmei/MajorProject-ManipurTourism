@@ -14,7 +14,7 @@ function Main() {
 
   useEffect(() => {
     const fetchCount = async () => {
-      const response = await axios.get('http://localhost:3003/admin');
+      const response = await axios.get('http://localhost:3003/admin/count');
       setTours(response.data.tours)
       setCustomers(response.data.customers)
     };
@@ -131,16 +131,17 @@ function RecentBooks(){
   }, []);
 
   const getData = async () => {
-    await axios.get('http://localhost:3003/admin/').then
+    await axios.get('http://localhost:3003/admin').then
     (
       res => {
         setloading(false);
         setTours(
-          res.data.splice(0,4).map(row => ({
+          res.data.splice(0,5).map(row => ({
             Name: row.name,
             Email: row.email,
             From: row.from,
-            Destination: row.destination,         
+            Destination: row.destination,
+            createdAt: row.createdAt         
           }))
         );
         
@@ -169,6 +170,11 @@ function RecentBooks(){
     {
       title: "Destination",
       dataIndex: "Destination",
+      width: 150
+    },
+    {
+      title: "Book At",
+      dataIndex: "createdAt",
       width: 150
     }
   ];
