@@ -8,18 +8,18 @@ import axios from 'axios'
 
 
 function Main() {
-  const [tours, setTours] = useState(0);
-  const [customers, setCustomers] = useState(0);
+  // const [tours, setTours] = useState(0);
+  // const [customers, setCustomers] = useState(0);
   // const [guides, setGuides] = useState(0);
 
-  useEffect(() => {
-    const fetchCount = async () => {
-      const response = await axios.get('http://localhost:3003/admin/count');
-      setTours(response.data.tours)
-      setCustomers(response.data.customers)
-    };
+  // useEffect(() => {
+  //   const fetchCount = async () => {
+  //     const response = await axios.get('http://localhost:3003/admin/count');
+  //     setTours(response.data.tours)
+  //     setCustomers(response.data.customers)
+  //   };
 
-    fetchCount();
+    // fetchCount();
     // axios.get('http://localhost:3003/admin')
     // .then((res) => {
     //   setTours(res.total)
@@ -30,7 +30,7 @@ function Main() {
     // .then((res) => {
     //   setGuides(res.total)
     // });
-  }, []);
+  // }, []);
 
   return (
     <Space size={30} direction="vertical">
@@ -51,7 +51,7 @@ function Main() {
           />
           } 
           title={"Tours Booked"} 
-          value={tours} 
+          value={234} 
         />
 
         <DashboardCard 
@@ -67,7 +67,7 @@ function Main() {
         />
         } 
         title={"Customers"} 
-        value={customers} 
+        value={232} 
         />
 
         <DashboardCard 
@@ -131,7 +131,8 @@ function RecentBooks(){
   }, []);
 
   const getData = async () => {
-    await axios.get('http://localhost:3003/admin').then
+    await axios.get('http://localhost:3003/admin')
+    .then
     (
       res => {
         setloading(false);
@@ -148,8 +149,31 @@ function RecentBooks(){
        
       }
     )
+
+    await axios.get('http://localhost:3003/admin')
+    .then
+    (
+      res => {
+        setloading(false);
+        setTours(
+          res.data.splice(0,5).map(row => ({
+            Name: row.yourname,
+            Email: row.emailorphoneno,
+            From: row.from,
+            Destination: row.destination,
+            createdAt: row.createdAt         
+          }))
+        );
+        
+       
+      }
+    )
     
   };
+
+
+
+  
 
   const columns = [
     {
